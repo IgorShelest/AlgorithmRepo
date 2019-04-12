@@ -4,7 +4,7 @@
 
 
 def bubble_sort(unsorted_array):
-    """Bubble Sort function"""
+    """Bubble Sort algorithm"""
 
     for loop_iter in range(len(unsorted_array) - 1):
 
