@@ -3,22 +3,25 @@
 """
 
 
-def insertion_sort_recursive_iteration(unsorted_list, array_length):
-    """Insertion Sort Single Iteration"""
+def insertion_sort_recursive_iteration(unsorted_list, position):
+    """Insertion Sort Recursive Iteration"""
 
-    if array_length == len(unsorted_list):
+    if position == len(unsorted_list):
         return
 
-    "Perform single Insertion Sort iteration"
-    for element_iter in reversed(range(array_length)):
+    unsorted_element = unsorted_list[position]
+    element_iter = position - 1
 
-        if unsorted_list[element_iter] < unsorted_list[element_iter + 1]:
+    while element_iter >= 0:
 
-            unsorted_list[element_iter], unsorted_list[element_iter + 1] = \
-                unsorted_list[element_iter + 1], unsorted_list[element_iter]
+        if unsorted_list[element_iter] > unsorted_element:
+            unsorted_list[element_iter + 1] = unsorted_list[element_iter]
+            element_iter -= 1
+        else:
+            break
 
-    "Perform next Insertion Sort iteration"
-    insertion_sort_recursive_iteration(unsorted_list, array_length + 1)
+    unsorted_list[element_iter + 1] = unsorted_element
+    insertion_sort_recursive_iteration(unsorted_list, position + 1)
 
 
 def insertion_sort_recursive(unsorted_list):

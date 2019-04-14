@@ -54,7 +54,7 @@ def run_test(function, test_counter, num_of_elements):
 
         "Create unsorted list"
         unsorted_list = create_unsorted_list(num_of_elements)
-        verification_list = unsorted_list
+        verification_list = unsorted_list.copy()
 
         "Sort list"
         function(unsorted_list)
